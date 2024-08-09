@@ -1,0 +1,20 @@
+## How to unstall python2.7 and python3.6 from ubuntu 18.04
+
+#Check python version
+python3.6 --version
+
+# Run below command to remove python
+
+sudo apt-get remove --purge python3.6
+sudo apt-get autoremove --purge
+sudo apt-get autoclean
+sudo find / -name 'python3.6*' -exec rm -rf {} \;
+sudo update-alternatives --remove python /usr/bin/python3.6
+
+# Check again python version and validate if it has removed or not?
+python3.6 --version
+
+#you should get message "no such file or directoy"
+
+#Check if any remaining PPA repositories :
+sudo apt-get-repository --remove ppa:deadsnakes/ppa  
