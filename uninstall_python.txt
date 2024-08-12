@@ -9,6 +9,7 @@ sudo apt-get remove --purge python3.6
 sudo apt-get autoremove --purge
 sudo apt-get autoclean
 sudo find / -name 'python3.6*' -exec rm -rf {} \;
+sudo find / -type d -name 'python3.6*' -exec rm -rf {} \;
 sudo update-alternatives --remove python /usr/bin/python3.6
 
 # Check again python version and validate if it has removed or not?
@@ -18,3 +19,9 @@ python3.6 --version
 
 #Check if any remaining PPA repositories :
 sudo apt-get-repository --remove ppa:deadsnakes/ppa  
+
+# Validate if all the folders related to python3.6 deleted or not
+
+sudo find / -name 'python3.6*'
+sudo find / -type d -name 'python3.6*'
+
